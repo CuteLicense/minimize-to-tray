@@ -11,18 +11,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup MSVC environment
-      uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[16.0, 17.0)' # 安装16.0到17.0之间的最新版本
 
-    - name: Setup MSBuild (x64)
-      if: always()
-      id: setup_msbuild_path_x64
-      uses: ./
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3
       with:
-        vs-prerelease: true
-        msbuild-architecture: 'x64'
+        msbuild-architecture: ${{ matrix.architecture }}
+
+    - name: Build solution
+      run: |
+        msbuild msvc/libusb.sln /m -property:Configuration=${{ matrix.configuration }}
 
     - name: echo msbuild path
       run: |
