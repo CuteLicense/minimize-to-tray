@@ -1,0 +1,33 @@
+name: Build with VSCode Tasks
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build Project
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup MSVC environment
+      run: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+    - name: Build Resource
+      run: |
+        .\vc.bat rc.exe /nologo ${{ github.workspace }}\minimize-to-tray.rc
+      working-directory: ${{ github.workspace }}
+
+    - name: Build Code
+      run: |
+        .\vc.bat cl.exe /nologo /Zi /EHsc /DUNICODE /D_UNICODE /Fe:${{ github.workspace }}\minimize-to-tray.exe ${{ github.workspace }}\*.c User32.lib ${{ github.workspace }}\minimize-to-tray.res /link /subsystem:windows
+      working-directory: ${{ github.workspace }}
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows Build
+        path: ${{ github.workspace }}\minimize-to-tray.exe
+
