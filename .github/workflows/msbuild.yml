@@ -16,6 +16,21 @@ jobs:
       with:
         vs-version: '[16.0, 17.0)' # 安装16.0到17.0之间的最新版本
 
+    - name: Setup MSBuild (x64)
+      if: always()
+      id: setup_msbuild_path_x64
+      uses: ./
+      with:
+        vs-prerelease: true
+        msbuild-architecture: 'x64'
+
+    - name: echo msbuild path
+      run: |
+        echo "ARM PATH: ${{ steps.setup_msbuild_path_x64.outputs.msbuildPath }}"
+
+
+
+
     - name: Build Resource
       run: |
         .\vc.bat rc.exe /nologo ${{ github.workspace }}\minimize-to-tray.rc
