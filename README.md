@@ -4,20 +4,7 @@
 
 这对于长时间运行的程序可能很有用，可以将其留在后台而无需关注。
 
-它被设计为可编写脚本——如果您想要更具交互性/点击式的东西，您可能更喜欢：: [RBTray](http://rbtray.sourceforge.net/).
-
-
-## Download
-
-Download the utility from:
-
-  * [Releases](https://github.com/danielgjackson/minimize-to-tray/releases/latest).
-
-The source code is available at:
-
-  * [github.com/danielgjackson/minimize-to-tray](https://github.com/danielgjackson/minimize-to-tray)
-
-...and released under an open source [MIT License](https://github.com/danielgjackson/minimize-to-tray/blob/master/LICENSE.txt).
+它被设计为可编写脚本——如果您想要更具交互性/点击式的东西，您可能更喜欢： [RBTray](http://rbtray.sourceforge.net/).
 
 
 ## 用法
