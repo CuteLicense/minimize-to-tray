@@ -1,10 +1,10 @@
 # Minimize to tray
 
-This program minimizes an application to the Windows taskbar notification area (also informally known as the *system tray*).
+本程序将应用程序最小化到 Windows 任务栏通知区域（也非正式地称为“系统托盘”）。
 
-This might be useful for long-running programs that you are happy to leave in the background and forget about.
+这对于长时间运行的程序可能很有用，可以将其留在后台而无需关注。
 
-This is designed to be scriptable -- if you want something more interactive/point-and-click, you might prefer: [RBTray](http://rbtray.sourceforge.net/).
+它被设计为可编写脚本——如果您想要更具交互性/点击式的东西，您可能更喜欢：: [RBTray](http://rbtray.sourceforge.net/).
 
 
 ## Download
@@ -20,22 +20,22 @@ The source code is available at:
 ...and released under an open source [MIT License](https://github.com/danielgjackson/minimize-to-tray/blob/master/LICENSE.txt).
 
 
-## Usage
+## 用法
 
-Usage:
+用法:
 
     minimize-to-tray [/MIN|/NOMIN] [/NOTIFY|/NONOTIFY] "title"|"*suffix"|"prefix*"|"*substring*"
 
 Where:
 
-* `/MIN` - immediately hides the window (default).
-* `/NOMIN` - does not immediately hide the window (waits until you to manually minimize it).
-* `/NOTIFY` - alerts the user that the window has been minimized to the notification area.
-* `/NONOTIFY` - does not alert when minimized.
-* `"title"` - a window title to find by exact match (e.g. `"Calculator"` find a window with exactly that title).
-* `"*suffix"` - search for a matching suffix by placing an asterisk before the title (e.g. `"*Notepad"` matches `"Untitled - Notepad"`).  
-* `"prefix*"` - search for a matching prefix by placing an asterisk after the title (e.g. `"Signal*"` matches `"Signal (1)"`).  
-* `"*substring*"` - search for any matching part within the title by placing an asterisk either side (e.g. `"*watch*"` matches `"C:\WINDOWS\system32\cmd.exe - wsl watch ps"`).
+* `/MIN` - 立即隐藏窗口（默认）。 
+* `/NOMIN` - 不立即隐藏窗口（等到您手动最小化它）。 
+* `/NOTIFY` -  提醒用户窗口已最小化到通知区域。 
+* `/NONOTIFY` - 最小化时不发出警报。 
+* `"title"` - 通过精确匹配查找的窗口标题（例如 "计算器" 找到一个具有完全相同标题的窗口）。
+* `"*suffix"` - 通过在标题前放置星号来搜索匹配的后缀（例如 "*记事本" 比赛 "未命名 - 记事本"). 
+* `"prefix*"` - 通过在标题后放置星号来搜索匹配的前缀（例如 "Signal*" 比赛 "Signal (1)").  
+* `"*substring*"` - 通过在标题两侧放置星号来搜索标题中的任何匹配部分（例如 "*watch*" 比赛 "C:\WINDOWS\system32\cmd.exe - wsl watch ps"). 
 
 Effect:
 
