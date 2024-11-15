@@ -17,25 +17,9 @@ jobs:
       with:
         msbuild-architecture: ${{ matrix.architecture }}
 
-    - name: Build solution
-      run: |
-        msbuild msvc/libusb.sln /m -property:Configuration=${{ matrix.configuration }}
-
-    - name: echo msbuild path
-      run: |
-        echo "ARM PATH: ${{ steps.setup_msbuild_path_x64.outputs.msbuildPath }}"
-
-
-
-
-    - name: Build Resource
-      run: |
-        .\vc.bat rc.exe /nologo ${{ github.workspace }}\minimize-to-tray.rc
-      working-directory: ${{ github.workspace }}
-
     - name: Build Code
       run: |
-        .\vc.bat cl.exe /nologo /Zi /EHsc /DUNICODE /D_UNICODE /Fe:${{ github.workspace }}\minimize-to-tray.exe ${{ github.workspace }}\*.c User32.lib ${{ github.workspace }}\minimize-to-tray.res /link /subsystem:windows
+        .\build.cmd
       working-directory: ${{ github.workspace }}
 
     - name: Upload artifact
