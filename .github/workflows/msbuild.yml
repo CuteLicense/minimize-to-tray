@@ -24,7 +24,7 @@ jobs:
 
     - name: Set date variable
       run: |
-        $date = Get-Date -Format "yyyy-MM-dd"
+        $date = Get-Date -Format "_yyyyMMdd"
         echo "ARTIFACT_NAME=minimize-to-tray-$date" | Out-File -FilePath $env:GITHUB_ENV -Encoding UTF8 -Append
       shell: pwsh
     
