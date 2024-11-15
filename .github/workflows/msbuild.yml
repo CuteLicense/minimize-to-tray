@@ -22,9 +22,15 @@ jobs:
         .\build.cmd
       working-directory: ${{ github.workspace }}
 
+    - name: Set date variable
+      run: |
+        $date = Get-Date -Format "yyyy-MM-dd"
+        echo "ARTIFACT_NAME=minimize-to-tray-$date" | Out-File -FilePath $env:GITHUB_ENV -Encoding UTF8 -Append
+      shell: pwsh
+    
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: minimize-to-tray-${{ format-date('_YYYYMMDD', github.event.run_started_at) }}
+        name: ${{ env.ARTIFACT_NAME }}
         path: ${{ github.workspace }}\minimize-to-tray.exe
 
