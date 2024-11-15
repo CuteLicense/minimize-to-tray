@@ -24,16 +24,16 @@ Where:
 * `"prefix*"` - 通过在标题后放置星号来搜索匹配的前缀（例如 "Signal*" 比赛 "Signal (1)").  
 * `"*substring*"` - 通过在标题两侧放置星号来搜索标题中的任何匹配部分（例如 "*watch*" 比赛 "C:\WINDOWS\system32\cmd.exe - wsl watch ps"). 
 
-Effect:
+效果：
 
-* The window that has a title matching the given suffix will appear to be minimized as an icon in the taskbar notification area (system tray).
-* The notification icon and tooltip should match the window's icon and title.
-* Left-clicking on the notification icon restores the window.
-* When you minimize the window yourself, it will disappear back to the taskbar notification area.
-* Right-clicking on the notification icon shows a menu:
-  * *Restore* - restores the minimized window.  When you minimize it again, it will return to the notification area.
-  * *Close* - sends the window a close signal (it restores it first in case it needs to show UI).
-  * *Stop Hiding* - takes the window out of the notification area (it will now be minimized normally) and does not track any future minimizes.  This closes this utility for that window.
+* 标题与给定后缀匹配的窗口将最小化显示为任务栏通知区域（系统托盘）中的图标。
+* 通知图标和工具提示应与窗口的图标和标题相匹配。
+* 左键单击通知图标可以恢复窗口。
+* 当你自己最小化窗口时，它将消失回到任务栏通知区域。
+* 右键单击通知图标会显示一个菜单：
+  * *恢复* - 恢复最小化的窗口。当你再次最小化时，它将返回到通知区域。
+  * *关闭* - 向窗口发送关闭信号（如果需要显示用户界面，它会先恢复窗口）。
+  * *停止隐藏* - 将窗口从通知区域移出（它现在将正常最小化），并且不再跟踪任何未来的最小化操作。这将关闭该窗口的此实用程序。
 
 
 ## Troubleshooting
